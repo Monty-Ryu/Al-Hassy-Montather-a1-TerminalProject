@@ -1,4 +1,7 @@
 ﻿    // Intro plus naming
+using System;
+using System.ComponentModel.Design;
+
 Console.WriteLine("A stong brave warrior has been engaged in a fight with the villan " +
     "Ryoza to the death with the planet on the line.\n" +
     "What is the name of this courageous fighter?");
@@ -6,8 +9,8 @@ Console.WriteLine("A stong brave warrior has been engaged in a fight with the vi
 string fighterName = Console.ReadLine();
 Console.WriteLine();
 
-// Follow up plus energy prompt
-Console.WriteLine($"{fighterName} has a limited amount of energy left to beat Ryoza. " +
+    // Follow up plus energy prompt
+Console.WriteLine($"{fighterName} has a limited amount of energy left to beat Ryoza.\n" +
     $"How much power left do you believe they have to fight off Ryoza?");
 
     // Store energy amount
@@ -26,8 +29,28 @@ Console.WriteLine();
 int ryozaEnergy = 1000;
 int drazkoSupportEnergy = 500;
 
-if ( drazkoSupport == "Yes" || drazkoSupport == "yes")
+    // Check if response is true or not
+if (drazkoSupport == "Yes" || drazkoSupport == "yes")
 {
     if (remainingEnergy + drazkoSupportEnergy > ryozaEnergy)
+    {
+        // Enough total energy, inform of win
         Console.WriteLine("Well done! You and your team manage to beat the fierce Ryoza!");
+    }
+    else
+    {
+        // Not enough combined energy, inform of loss
+        Console.WriteLine($" Oh nooooooooooooo!!! {fighterName} and team Drazko did not have enough energy to beat Ryoza.");
+    }
+}
+
+else if (remainingEnergy >  ryozaEnergy)
+{
+        Console.WriteLine($"Well done! {fighterName}s resolve and energy was enough to defeat the villanous Ryoza!!");
+        
+}
+
+else
+{
+    
 }
